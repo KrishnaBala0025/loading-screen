@@ -47,7 +47,7 @@ body {
   margin: 0 auto;
   height: 60%;
   width: auto;
-  max-width: 100%;
+  max-width: 90%;
   stroke: #f34d4d;
   translate: 0 0 0;
   animation: fist 1.5s ease-in;
