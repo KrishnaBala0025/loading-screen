@@ -1,7 +1,406 @@
-$black: #f00;
-$blue: #00f;
-$green: #0f0;
+$primary: #f34d4d;
+$bg: #0c0404;
+$light: #fff;
+
+@mixin splashAnimation(
+  $name,
+  $time: 1.5s,
+  $delay: 0,
+  $function: ease-in,
+  $fill: forwards,
+  $count: 1,
+  $direction: normal
+) {
+  animation-name: $name;
+  animation-duration: $time;
+  animation-delay: $delay;
+  animation-fill-mode: $fill;
+  animation-timing-function: $function;
+  animation-iteration-count: $count;
+  animation-direction: $direction;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 body {
-  //   background: $black;
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.splash {
+  background-color: $bg;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  // & > * {
+  //   position: relative;
+  //   z-index: 1;
+  // }
+
+  // animation start =====
+  &__animation {
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    width: 100%;
+    flex-grow: 1;
+    padding-bottom: 2.4rem;
+    &::after {
+      z-index: 1;
+      content: "";
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      height: 50%;
+      background: rgb(0, 0, 0);
+      background: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(#140505, 1) 48%,
+        rgba(255, 0, 0, 0) 100%
+      );
+    }
+    // fist start =====
+    &__fist {
+      z-index: 0;
+      position: relative;
+      margin: 0 auto;
+      height: 60%;
+      width: auto;
+      max-width: 100%;
+      stroke: #f34d4d;
+      translate: 0 0 0;
+      animation: fist 1.5s ease-in;
+      @keyframes fist {
+        0% {
+          translate: 0 100px 0;
+        }
+
+        100% {
+          translate: 0 0 0;
+        }
+      }
+      // right start =====
+      &__right {
+        stroke-dashoffset: 1000;
+        stroke-dasharray: 1000;
+        @include splashAnimation(handRight, 2s);
+
+        @keyframes handRight {
+          0% {
+            stroke-dashoffset: 1000;
+            stroke-dasharray: 1000;
+          }
+          100% {
+            stroke-dashoffset: 0;
+            stroke-dasharray: 1000;
+          }
+        }
+      }
+      // right end =====
+
+      // left start =====
+      &__left {
+        stroke-dashoffset: 400;
+        stroke-dasharray: 400;
+        @include splashAnimation(handLeft);
+
+        @keyframes handLeft {
+          0% {
+            stroke-dashoffset: 400;
+            stroke-dasharray: 400;
+          }
+          100% {
+            stroke-dashoffset: 0;
+            stroke-dasharray: 400;
+          }
+        }
+      }
+      // left end =====
+
+      //finger-1 start =====
+      &__finger-1 {
+        stroke-dashoffset: 100;
+        stroke-dasharray: 100;
+        @include splashAnimation(finger1, 0.8s, 1.2s);
+
+        @keyframes finger1 {
+          0% {
+            stroke-dashoffset: 100;
+            stroke-dasharray: 100;
+          }
+          100% {
+            stroke-dashoffset: 0;
+            stroke-dasharray: 100;
+          }
+        }
+      }
+      //finger-1 end =====
+
+      //finger-bottom start =====
+      &__finger-bottom {
+        stroke-dashoffset: 180;
+        stroke-dasharray: 180;
+        @include splashAnimation(fingerBottom, 0.8s, 1.5s);
+
+        @keyframes fingerBottom {
+          0% {
+            stroke-dashoffset: 180;
+            stroke-dasharray: 180;
+          }
+          100% {
+            stroke-dashoffset: 0;
+            stroke-dasharray: 180;
+          }
+        }
+      }
+      //finger-bottom end =====
+
+      //finger-1 start =====
+      &__finger-2 {
+        stroke-dashoffset: 100;
+        stroke-dasharray: 100;
+        @include splashAnimation(finger2, 0.6s, 2s, $function: ease-out);
+
+        @keyframes finger2 {
+          0% {
+            stroke-dashoffset: 100;
+            stroke-dasharray: 100;
+          }
+          100% {
+            stroke-dashoffset: 0;
+            stroke-dasharray: 100;
+          }
+        }
+      }
+      //finger-1 end =====
+      //finger-1 start =====
+      &__finger-3 {
+        stroke-dashoffset: 140;
+        stroke-dasharray: 140;
+        @include splashAnimation(finger3, 0.6s, 2.12s);
+
+        @keyframes finger3 {
+          0% {
+            stroke-dashoffset: 140;
+            stroke-dasharray: 140;
+          }
+          100% {
+            stroke-dashoffset: 0;
+            stroke-dasharray: 140;
+          }
+        }
+      }
+      //finger-1 end =====
+      //line-1 start =====
+      &__line-1 {
+        stroke-dashoffset: 84;
+        stroke-dasharray: 84;
+        @include splashAnimation(
+          line1,
+          1s,
+          2.2s,
+          $function: ease-out,
+          // $count: infinite
+        );
+
+        @keyframes line1 {
+          0% {
+            stroke-dashoffset: 84;
+            stroke-dasharray: 84;
+          }
+          25% {
+            stroke-dashoffset: 0;
+            stroke-dasharray: 84;
+          }
+          50% {
+            stroke-dashoffset: 50;
+            stroke-dasharray: 84;
+          }
+          75% {
+            stroke-dashoffset: 30;
+            stroke-dasharray: 84;
+          }
+          100% {
+            stroke-dashoffset: 0;
+            stroke-dasharray: 84;
+          }
+        }
+      }
+      //line-1 end =====
+      //line-3 start =====
+      &__line-3 {
+        stroke-dashoffset: 30;
+        stroke-dasharray: 30;
+        @include splashAnimation(line3, 1s, 2.4s, $function: ease-out);
+
+        @keyframes line3 {
+          0% {
+            stroke-dashoffset: 30;
+            stroke-dasharray: 30;
+          }
+
+          100% {
+            stroke-dashoffset: 0;
+            stroke-dasharray: 30;
+          }
+        }
+      }
+      //line-3 end =====
+      //line-1 start =====
+      &__line-reverse {
+        stroke-dashoffset: -80;
+        stroke-dasharray: 80;
+        @include splashAnimation(reverse, 1s, 2.2s, $function: ease-out);
+
+        @keyframes reverse {
+          0% {
+            stroke-dashoffset: -80;
+            stroke-dasharray: 0;
+          }
+          25% {
+            stroke-dashoffset: -50;
+            stroke-dasharray: 80;
+          }
+          50% {
+            stroke-dashoffset: 0;
+            stroke-dasharray: 80;
+          }
+          75% {
+            stroke-dashoffset: 40;
+            stroke-dasharray: 80;
+          }
+
+          100% {
+            stroke-dashoffset: 0;
+            stroke-dasharray: 80;
+          }
+        }
+      }
+      //line-1 end =====
+    }
+    // fist end =====
+
+    // title & subtitle end =====
+    &__title {
+      font-size: 5vw;
+      color: $light;
+      position: relative;
+      z-index: 3;
+      margin-top: -2rem;
+      text-transform: uppercase;
+      translate: 0 0 0;
+      animation: title 1.5s ease-in;
+      transform-origin: bottom center;
+      opacity: 1;
+      @keyframes title {
+        0% {
+          translate: 0 100px 0;
+          scale: 0.5;
+          opacity: 0;
+        }
+
+        100% {
+          translate: 0 0 0;
+          scale: 1;
+          opacity: 1;
+        }
+      }
+    }
+    &__subtitle {
+      position: absolute;
+      bottom: 0;
+      font-size: 10vw;
+      color: $light;
+      opacity: 0.03;
+      width: 100%;
+      text-transform: uppercase;
+      z-index: 2;
+      translate: 0 4% 0;
+      animation: subtitle 3s ease-in;
+      @keyframes subtitle {
+        0% {
+          translate: 0 100% 0;
+          opacity: 0;
+        }
+        100% {
+          translate: 0 4% 0;
+          opacity: 0.03;
+        }
+      }
+    }
+    // title & subtitle end =====
+  }
+  // animation end =====
+
+  &__loader {
+    z-index: 3;
+    padding: 2rem 0;
+    color: $light;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    animation: loader 1.3s ease-in;
+    translate: 0 0 0;
+    opacity: 1;
+    @keyframes loader {
+      0% {
+        translate: 0 100px 0;
+        opacity: 0;
+      }
+      100% {
+        translate: 0 0 0;
+        opacity: 1;
+      }
+    }
+    &__bar {
+      width: 200px;
+      height: 2px;
+      border-radius: 4px;
+      overflow: hidden;
+      background-color: #fff;
+      position: relative;
+      &__progress {
+        width: 0;
+        height: 100%;
+        background-color: $primary;
+        position: absolute;
+        top: 0;
+        left: 0;
+        @include splashAnimation(
+          progress,
+          4s,
+          3s,
+          $function: cubic-bezier(0.3, 0.55, 0.15, 0.86),
+          $fill: forwards
+        );
+        &.active {
+          width: 100%;
+        }
+        @keyframes progress {
+          0% {
+            width: 0;
+          }
+          50% {
+            width: 40;
+          }
+          100% {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
 }

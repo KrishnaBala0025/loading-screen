@@ -1,3 +1,380 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 body {
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.splash {
+  background-color: #0c0404;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.splash__animation {
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  width: 100%;
+  flex-grow: 1;
+  padding-bottom: 2.4rem;
+}
+.splash__animation::after {
+  z-index: 1;
+  content: "";
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 50%;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(0deg, rgb(0, 0, 0) 0%, #140505 48%, rgba(255, 0, 0, 0) 100%);
+}
+.splash__animation__fist {
+  z-index: 0;
+  position: relative;
+  margin: 0 auto;
+  height: 60%;
+  width: auto;
+  max-width: 100%;
+  stroke: #f34d4d;
+  translate: 0 0 0;
+  animation: fist 1.5s ease-in;
+}
+@keyframes fist {
+  0% {
+    translate: 0 100px 0;
+  }
+  100% {
+    translate: 0 0 0;
+  }
+}
+.splash__animation__fist__right {
+  stroke-dashoffset: 1000;
+  stroke-dasharray: 1000;
+  animation-name: handRight;
+  animation-duration: 2s;
+  animation-delay: 0;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+}
+@keyframes handRight {
+  0% {
+    stroke-dashoffset: 1000;
+    stroke-dasharray: 1000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 1000;
+  }
+}
+.splash__animation__fist__left {
+  stroke-dashoffset: 400;
+  stroke-dasharray: 400;
+  animation-name: handLeft;
+  animation-duration: 1.5s;
+  animation-delay: 0;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+}
+@keyframes handLeft {
+  0% {
+    stroke-dashoffset: 400;
+    stroke-dasharray: 400;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 400;
+  }
+}
+.splash__animation__fist__finger-1 {
+  stroke-dashoffset: 100;
+  stroke-dasharray: 100;
+  animation-name: finger1;
+  animation-duration: 0.8s;
+  animation-delay: 1.2s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+}
+@keyframes finger1 {
+  0% {
+    stroke-dashoffset: 100;
+    stroke-dasharray: 100;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 100;
+  }
+}
+.splash__animation__fist__finger-bottom {
+  stroke-dashoffset: 180;
+  stroke-dasharray: 180;
+  animation-name: fingerBottom;
+  animation-duration: 0.8s;
+  animation-delay: 1.5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+}
+@keyframes fingerBottom {
+  0% {
+    stroke-dashoffset: 180;
+    stroke-dasharray: 180;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 180;
+  }
+}
+.splash__animation__fist__finger-2 {
+  stroke-dashoffset: 100;
+  stroke-dasharray: 100;
+  animation-name: finger2;
+  animation-duration: 0.6s;
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+}
+@keyframes finger2 {
+  0% {
+    stroke-dashoffset: 100;
+    stroke-dasharray: 100;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 100;
+  }
+}
+.splash__animation__fist__finger-3 {
+  stroke-dashoffset: 140;
+  stroke-dasharray: 140;
+  animation-name: finger3;
+  animation-duration: 0.6s;
+  animation-delay: 2.12s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+}
+@keyframes finger3 {
+  0% {
+    stroke-dashoffset: 140;
+    stroke-dasharray: 140;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 140;
+  }
+}
+.splash__animation__fist__line-1 {
+  stroke-dashoffset: 84;
+  stroke-dasharray: 84;
+  animation-name: line1;
+  animation-duration: 1s;
+  animation-delay: 2.2s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+}
+@keyframes line1 {
+  0% {
+    stroke-dashoffset: 84;
+    stroke-dasharray: 84;
+  }
+  25% {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 84;
+  }
+  50% {
+    stroke-dashoffset: 50;
+    stroke-dasharray: 84;
+  }
+  75% {
+    stroke-dashoffset: 30;
+    stroke-dasharray: 84;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 84;
+  }
+}
+.splash__animation__fist__line-3 {
+  stroke-dashoffset: 30;
+  stroke-dasharray: 30;
+  animation-name: line3;
+  animation-duration: 1s;
+  animation-delay: 2.4s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+}
+@keyframes line3 {
+  0% {
+    stroke-dashoffset: 30;
+    stroke-dasharray: 30;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 30;
+  }
+}
+.splash__animation__fist__line-reverse {
+  stroke-dashoffset: -80;
+  stroke-dasharray: 80;
+  animation-name: reverse;
+  animation-duration: 1s;
+  animation-delay: 2.2s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+}
+@keyframes reverse {
+  0% {
+    stroke-dashoffset: -80;
+    stroke-dasharray: 0;
+  }
+  25% {
+    stroke-dashoffset: -50;
+    stroke-dasharray: 80;
+  }
+  50% {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 80;
+  }
+  75% {
+    stroke-dashoffset: 40;
+    stroke-dasharray: 80;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 80;
+  }
+}
+.splash__animation__title {
+  font-size: 5vw;
+  color: #fff;
+  position: relative;
+  z-index: 3;
+  margin-top: -2rem;
+  text-transform: uppercase;
+  translate: 0 0 0;
+  animation: title 1.5s ease-in;
+  transform-origin: bottom center;
+  opacity: 1;
+}
+@keyframes title {
+  0% {
+    translate: 0 100px 0;
+    scale: 0.5;
+    opacity: 0;
+  }
+  100% {
+    translate: 0 0 0;
+    scale: 1;
+    opacity: 1;
+  }
+}
+.splash__animation__subtitle {
+  position: absolute;
+  bottom: 0;
+  font-size: 10vw;
+  color: #fff;
+  opacity: 0.03;
+  width: 100%;
+  text-transform: uppercase;
+  z-index: 2;
+  translate: 0 4% 0;
+  animation: subtitle 3s ease-in;
+}
+@keyframes subtitle {
+  0% {
+    translate: 0 100% 0;
+    opacity: 0;
+  }
+  100% {
+    translate: 0 4% 0;
+    opacity: 0.03;
+  }
+}
+.splash__loader {
+  z-index: 3;
+  padding: 2rem 0;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  animation: loader 1.3s ease-in;
+  translate: 0 0 0;
+  opacity: 1;
+}
+@keyframes loader {
+  0% {
+    translate: 0 100px 0;
+    opacity: 0;
+  }
+  100% {
+    translate: 0 0 0;
+    opacity: 1;
+  }
+}
+.splash__loader__bar {
+  width: 200px;
+  height: 2px;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: #fff;
+  position: relative;
+}
+.splash__loader__bar__progress {
+  width: 0;
+  height: 100%;
+  background-color: #f34d4d;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation-name: progress;
+  animation-duration: 4s;
+  animation-delay: 3s;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.3, 0.55, 0.15, 0.86);
+  animation-iteration-count: 1;
+  animation-direction: normal;
+}
+.splash__loader__bar__progress.active {
+  width: 100%;
+}
+@keyframes progress {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 40;
+  }
+  100% {
+    width: 100%;
+  }
 }/*# sourceMappingURL=style.css.map */
