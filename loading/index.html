@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="scss/style.css" />
   </head>
   <body>
-    <div class="splash">
+    <div class="splash" id="splash">
       <div class="splash__animation">
         <svg
           width="448"
@@ -140,5 +140,25 @@
         </div>
       </div>
     </div>
+    <div class="main-content">
+      <h1>We Want Justice</h1>
+    </div>
+
+    <script>
+      const preloader = document.getElementById("splash");
+      function fadeOutPreloader() {
+        let opacity = 1;
+        const fadeEffect = setInterval(() => {
+          if (opacity > 0) {
+            opacity -= 0.1;
+            preloader.style.opacity = opacity;
+          } else {
+            clearInterval(fadeEffect);
+            preloader.style.display = "none";
+          }
+        }, 25);
+      }
+      setTimeout(fadeOutPreloader, 8000); //
+    </script>
   </body>
 </html>

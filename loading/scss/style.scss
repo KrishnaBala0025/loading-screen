@@ -39,12 +39,10 @@ body {
   flex-direction: column;
   text-align: center;
   width: 100%;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
   overflow: hidden;
-  // & > * {
-  //   position: relative;
-  //   z-index: 1;
-  // }
 
   // animation start =====
   &__animation {
@@ -355,6 +353,7 @@ body {
     animation: loader 1.3s ease-in;
     translate: 0 0 0;
     opacity: 1;
+    font-size: 0.8rem;
     @keyframes loader {
       0% {
         translate: 0 100px 0;
@@ -403,4 +402,14 @@ body {
       }
     }
   }
+}
+
+.main-content {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 5vh;
+  text-transform: uppercase;
 }
